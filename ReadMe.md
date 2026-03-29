@@ -30,20 +30,20 @@ Prompt injection attacks (both direct and indirect) are enabled by the following
 
 Unbounded natural-language instruction following
 
-* + instructions expressed in the same natural-language form as untrusted content
+ * instructions expressed in the same natural-language form as untrusted content
 
 Blended control and data channel
 
-* + a single shared input stream contains system instruction, user instructions, and untrusted content.
+ * a single shared input stream contains system instruction, user instructions, and untrusted content.
 
 Weak instruction-data boundary enforcement
 
-* + no strict syntactic boundaries between instructions and untrusted data
-  + the model relies on learned semantic cues to distinguish system instructions from user instructions or data.
+ * no strict syntactic boundaries between instructions and untrusted data
+ * the model relies on learned semantic cues to distinguish system instructions from user instructions or data.
 
 Weak focus
 
-* + LLMs are easily distracted from their original instructions by prompt injections. [48]
+ * LLMs are easily distracted from their original instructions by prompt injections. [48]
 
 In 2025, 0-click “hijacking” exploits were found impacting organizations where M365 Copilot (“*EchoLeak”*[8]) or OpenAI ChatGPT (“*ShadowLeak”*[11]) agents had access to user mailboxes. Both exploits resulted in the agent successfully exfiltrating data after viewing an email whose text included indirect prompt injection.
 
