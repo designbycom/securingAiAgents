@@ -1,3 +1,9 @@
+**Provided below in text form but more readable in the "response.pdf" PDF file format included in this same repository.
+
+
+
+
+
 **“Security Considerations for Artificial Intelligence Agents”**
 
 A response to questions in NIST-2025-0035
@@ -12,7 +18,7 @@ This document uses the NIST Request for Information on “Security Consideration
 
 Although most widely used AI agent systems are Transformer architecture LLMs (proposed in 2017),[50] AI textbooks published as early as 1995[49] discuss AI based agents.
 
-The NIST RFI did not explicitly state its focus as LLM-based AI agentsbut the context and references it included support this interpretation. This document uses the terms “AI agent” and “agent” as shorthand for LLM-based AI agents.
+The NIST RFI did not explicitly state its focus as LLM-based AI agents but the context and references it included support this interpretation. This document uses the terms “AI agent” and “agent” as shorthand for LLM-based AI agents.
 
 # Responses:
 
