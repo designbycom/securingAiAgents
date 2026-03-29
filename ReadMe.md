@@ -47,16 +47,16 @@ Weak focus
 
 In 2025, 0-click “hijacking” exploits were found impacting organizations where M365 Copilot (“*EchoLeak”*[8]) or OpenAI ChatGPT (“*ShadowLeak”*[11]) agents had access to user mailboxes. Both exploits resulted in the agent successfully exfiltrating data after viewing an email whose text included indirect prompt injection.
 
-1. Cascading prompts in multi-agent systems:
+2. Cascading prompts in multi-agent systems:
 
 These include cascading prompt injections, cascading harmful misinterpretations of legitimate instructions, or cascading errors which propagate and amplify from agent to agent.[28][47]
 
-1. Data poisoning, backdoors, evasion:
+3. Data poisoning, backdoors, evasion:
    Adversarial ML risks amplified in AI agent systems by system-level risks (tool supply chain, authentication misuse). [7][2][5]
 
 These can remain hidden until a particular trigger occurs and have been shown to survive retraining the model. [56]
 
-1. Misaligned goals:
+4. Misaligned goals:
    AI agents can choose unintended and harmful methods to complete an assigned goal and can pursue goals they were not assigned (“excessive agency”).
 
 A Replit.com AI coding agent deleted a Replit client company’s production database. The agent then added application code to hide the deletion by simulating the existence of the database. [52]
@@ -67,13 +67,13 @@ Anthropic researchers reported testing of *“16 major models from Anthropic, Op
 
 Researchers from Stanford, Harvard, MIT, Carnegie Mellon, and other institutions conducted a red-teaming study of AI agents, and observed *“unauthorized compliance with non-owners, disclosure of sensitive information, execution of destructive system-level actions, denial-of-service conditions, uncontrolled resource consumption, identity spoofing vulnerabilities, cross-agent propagation of unsafe practices, and partial system takeover”.* [51] Anthropic researchers found similar results across models from all major providers. [53]
 
-1. Other deceptive behaviors:
+5. Other deceptive behaviors:
 
 Strategic deception, “sandbagging”, sycophancy, unfaithful reasoning
 
 This threat type also includes “banal deception” – the common “hallucinations” familiar to AI users. Like other threat types, the potential impact of these is far greater when combined with overconfidence in AI agents.
 
-1. Human overconfidence in AI agents:
+6. Human overconfidence in AI agents:
 
 Overconfidence in AI agents, a pervasive risk amplifier, leads to blind spots (lack of logging and monitoring), inattention (ignored logging and monitoring), de-prioritization (over-trust in traditional security), and lack of preparation (inadequate incident response and disaster recovery planning).
 
@@ -203,20 +203,20 @@ The following is a broad list which should be tuned to be appropriate to the bus
 
 1. Plan rollback processes and procedures for an agent or the entire environment.
 
-1. define statistical metrics and thresholds to trigger a rollback
-2. determine required approvals and notifications
-3. define and document rollback method and procedures
-4. In critical impact applications, consider an automated rollback mechanism.
+a. define statistical metrics and thresholds to trigger a rollback
+b. determine required approvals and notifications
+c. define and document rollback method and procedures
+d. In critical impact applications, consider an automated rollback mechanism.
 
 2. Implement agent containment methods or for agents with critical impact, consider an agent or system kill switch.
 
 Determine the following:
 
-1. methods to implement this capability and secure it (automated for containment),
-2. metrics to monitor and thresholds required to trigger,
-3. approvals required to deploy and pre-approvals required for use of the capability,
-4. methods to ensure real-time collection and validation of required data
-5. method and channels for urgent notifications
+a. methods to implement this capability and secure it (automated for containment),
+b. metrics to monitor and thresholds required to trigger,
+c. approvals required to deploy and pre-approvals required for use of the capability,
+d. methods to ensure real-time collection and validation of required data
+e. method and channels for urgent notifications
 
 3. Create a detailed, documented incident response plan, and documented disaster recovery plan. Test both plans before they are needed.
 
@@ -224,75 +224,75 @@ Determine the following:
 
 5. Implement layered security controls: [2][5][4]
 
-1. model/interaction hardening against prompt injection;
-2. system-level containment
-   1. tool allowlists,
-   2. output validation,
-   3. See also #10 - #14, below
-3. human-in-the-loop approvals for use of high risk capabilities.
+a. model/interaction hardening against prompt injection;
+b. system-level containment
+   i. tool allowlists,
+   ii. output validation,
+   iii. See also #10 - #14, below
+c. human-in-the-loop approvals for use of high risk capabilities.
 
 6. Operationalize secure development and deployment: [15][5][6]
 
-1. security testing/red-teaming for agent workflows (see also #9, below)
-2. secure-by-design tool adapters,
-3. supply chain security for prompts/tools,
+a. security testing/red-teaming for agent workflows (see also #9, below)
+b. secure-by-design tool adapters,
+c. supply chain security for prompts/tools,
 
 7. Implement continuous monitoring
 
-1. define and document metrics, baselines, and alert thresholds during development
-   1. include anomalies in behavior and context [19][5][6]
-   2. include anomalies across multiple agents
-   3. include access, inputs and outputs of tools and agents
-   4. include metadata - IP addresses, identities, and application, session, and request IDs
-2. create policy violation alerts,
-3. create incident runbooks
-4. hash log entries for secure use
-   1. analyze hashes to detect patterns of prompt abuse
-   2. store separately from raw log data
-   3. protects against passing prompt injections in log entries
-5. define strict access controls and retention policies for raw log data
-   1. logs may contain privileged user or company data
-   2. logs may contain / are privileged security data
+a. define and document metrics, baselines, and alert thresholds during development
+   i. include anomalies in behavior and context [19][5][6]
+   ii. include anomalies across multiple agents
+   iii. include access, inputs and outputs of tools and agents
+   iv. include metadata - IP addresses, identities, and application, session, and request IDs
+b. create policy violation alerts,
+c. create incident runbooks
+d. hash log entries for secure use
+   i. analyze hashes to detect patterns of prompt abuse
+   ii. store separately from raw log data
+   iii. protects against passing prompt injections in log entries
+e. define strict access controls and retention policies for raw log data
+   i. logs may contain privileged user or company data
+   ii. logs may contain / are privileged security data
 
 8. Incorporate AI gateways with policy engines into solutions or as shared services
 
-1. intercept, check, and interdict tool and agent connections.
-2. create central, immutable audit logs (see 7.a. – 7.e. above)
+a. intercept, check, and interdict tool and agent connections.
+b. create central, immutable audit logs (see 7.a. – 7.e. above)
 
 9. Implement ongoing evaluations of agents
 
-1. automate repeated testing
-2. include task specific evaluation methods
-3. iterate and improve evaluation methods
-4. NIST CAISI defensive guidance.[1]
+a. automate repeated testing
+b. include task specific evaluation methods
+c. iterate and improve evaluation methods
+d. NIST CAISI defensive guidance.[1]
 
 10. Limit each identity to one agent:
 
-1. create a unique identity for each agent
-2. consider an identity per task per agent for high impact tasks
-3. make identity credential secrets ephemeral (changed per use)
+a. create a unique identity for each agent
+b. consider an identity per task per agent for high impact tasks
+c. make identity credential secrets ephemeral (changed per use)
 
 11. Limit each tool and agent to the least required responsibilities
 
-1. do not aggregate tasks to a single agent except as required
-2. require human approval before consequential AI agent action
-3. do not provide agents capability to modify agent permissions
-4. split critical tasks across agents
+a. do not aggregate tasks to a single agent except as required
+b. require human approval before consequential AI agent action
+c. do not provide agents capability to modify agent permissions
+d. split critical tasks across agents
 
 12. Limit each tool and agent to the Least Privilege Access.
 
-1. grant each agent tool or scaffold identity only the minimum required permissions.
-2. limit each permission to the minimum required scope
+a. grant each agent tool or scaffold identity only the minimum required permissions.
+b. limit each permission to the minimum required scope
 
 13. Limit each tool and agent to the least required functionality:
 
-1. provision only the minimum required tools to each agent
-2. implement only the minimum required functionality in each tool
+a. provision only the minimum required tools to each agent
+b. implement only the minimum required functionality in each tool
 
 14. Limit each agent to the least required autonomy
 
-1. use the OWASP principle of “least agency”: [9]
-2. grant agents only the minimum autonomy required
+a. use the OWASP principle of “least agency”: [9]
+b. grant agents only the minimum autonomy required
 
 15. Limit code execution by agents to sandboxed execution environments
 
@@ -300,8 +300,8 @@ Determine the following:
 
 17. Do not allow unbounded access to unsecured data sources.
 
-1. Block or severely limit access to Internet sites if possible.
-2. Limit internal data access to purpose specific secured sources
+a. Block or severely limit access to Internet sites if possible.
+b. Limit internal data access to purpose specific secured sources
 
 18. Limit connectivity with AI agent system components to the least required
  (Zero Trust - NIST SP 800-207) [43]
@@ -511,9 +511,7 @@ Documentation should include:
 
 2. “run-as” identities used by or available to agents,
 
-3. capabilities available to agents including specific tool use and ability to orchestrate other agents,
-
-a. software used and dependencies
+3. capabilities available to agents including specific tool use and ability to orchestrate other agents, software used and dependencies
 
 4. public or private network access available to agents,
 
@@ -778,6 +776,7 @@ Systems safety engineering methods (e.g., STPA) provide hazard/constraint-focuse
 Research on alarm fatigue in clinical settings is relevant to designing agent monitoring dashboards.
 
 The concept of “meaningful human control” from autonomous weapons governance provides a framework for defining what constitutes adequate oversight of consequential agent actions.
+
 
 # References
 
