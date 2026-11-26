@@ -8,8 +8,6 @@
 
 A response to questions in NIST-2025-0035
 
-tkowalsky@designby.com
-
 **Background:**
 
 This document uses the NIST Request for Information on “Security Considerations for Artificial Intelligence” as a framework to discuss AI agent security. The questions are sourced from the Federal Register post by that title, with the number listed above.
